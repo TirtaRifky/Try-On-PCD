@@ -1,0 +1,866 @@
+[gd_scene load_steps=41 format=3 uid="uid://dpk26pkj3k270"]
+
+[ext_resource type="Texture2D" uid="uid://p2xfqxor8vnx" path="res://hair-asset/hair1.png" id="1_1yhme"]
+[ext_resource type="Script" path="res://Scripts/control.gd" id="1_322se"]
+[ext_resource type="Texture2D" uid="uid://bemii6rcjejku" path="res://hair-asset/hair2.png" id="2_t2svq"]
+[ext_resource type="FontFile" uid="uid://dedyd4n1a8j5p" path="res://HabaneraRounded-Medium.ttf" id="2_ywaak"]
+[ext_resource type="Script" path="res://Scripts/web_cam_controller.gd" id="3_0jwhu"]
+[ext_resource type="Script" path="res://Scripts/selection_list_hair.gd" id="3_4vc3x"]
+[ext_resource type="Texture2D" uid="uid://coc77vxqyqrv1" path="res://hair-asset/hair3.png" id="3_345wf"]
+[ext_resource type="Texture2D" uid="uid://c8n2on5s6fl51" path="res://hair-asset/hair4.png" id="4_opodf"]
+[ext_resource type="Texture2D" uid="uid://be21xjfwstouh" path="res://hair-asset/hair5.png" id="5_q2rga"]
+[ext_resource type="StyleBox" uid="uid://drxwc3eeb38b" path="res://themes/boxTeksHair.tres" id="5_u62el"]
+[ext_resource type="Theme" uid="uid://b55ksjh6c6jav" path="res://themes/HairButton.tres" id="6_hetvp"]
+[ext_resource type="Texture2D" uid="uid://cemclxyupc77i" path="res://hair-asset/hair6.png" id="6_jwpkr"]
+[ext_resource type="Texture2D" uid="uid://wdq2c4tyyxr8" path="res://hair-asset/hair7.png" id="7_hhqll"]
+[ext_resource type="Texture2D" uid="uid://bhq0bbc8o2knj" path="res://hair-asset/hair8.png" id="8_p73yl"]
+[ext_resource type="Texture2D" uid="uid://yvjvb1hosx1f" path="res://hair-asset/hair9.png" id="9_6mts4"]
+[ext_resource type="Texture2D" uid="uid://yxorfb77rhct" path="res://hair-asset/hair10.png" id="10_erjks"]
+[ext_resource type="Texture2D" uid="uid://bguhm5laop2ad" path="res://hair-asset/hair11.png" id="11_6fcjo"]
+[ext_resource type="Texture2D" uid="uid://csumxh7dbv3lk" path="res://hair-asset/hair12.png" id="12_65jix"]
+[ext_resource type="Texture2D" uid="uid://c7ou0l5gecaha" path="res://themes/—Pngtree—vector information icon_4272331.png" id="19_kqdpi"]
+[ext_resource type="Texture2D" uid="uid://u8n24o3mlwop" path="res://themes/—Pngtree—info vector icon_3791375.png" id="19_uvdq0"]
+[ext_resource type="Texture2D" uid="uid://c83u37q5smt6l" path="res://themes/—Pngtree—vector information icon_4183763.png" id="20_2l46h"]
+
+[sub_resource type="Gradient" id="Gradient_0n5s7"]
+interpolation_mode = 2
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.560345, 0.806035, 0.883621, 0.987069)
+colors = PackedColorArray(0.516261, 0.601116, 0.946247, 1, 0.336867, 0.246786, 0.72478, 1, 0.665921, 0.426746, 0.864843, 1, 0.769152, 0.481687, 0.908016, 1, 0.932025, 0.569613, 0.975492, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5ub28"]
+gradient = SubResource("Gradient_0n5s7")
+fill = 1
+metadata/_snap_enabled = true
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cq0fj"]
+texture = SubResource("GradientTexture2D_5ub28")
+modulate_color = Color(0.856067, 0.856067, 0.856067, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xf56w"]
+bg_color = Color(0.909804, 0.929412, 0.980392, 0.243137)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_brmue"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ww13"]
+bg_color = Color(1, 1, 1, 0.180392)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxnmo"]
+bg_color = Color(0.699266, 0.324482, 0.589586, 1)
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgyx1"]
+bg_color = Color(0.804947, 0.727533, 0.36892, 1)
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mc5g1"]
+bg_color = Color(0.386536, 0.679094, 0.428361, 1)
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yn2q5"]
+bg_color = Color(9.62615e-08, 0.691102, 0.654053, 1)
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fe0d"]
+bg_color = Color(0.418874, 0.497003, 0.598375, 1)
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p280j"]
+bg_color = Color(0.245071, 0.687994, 0.563114, 1)
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2tjm"]
+bg_color = Color(0.782192, 0.392869, 0.978354, 1)
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsuo8"]
+bg_color = Color(0.89678, 0.46986, 0, 1)
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jqn6"]
+bg_color = Color(0.539646, 0.651523, 0.382785, 1)
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2cnp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xx5gu"]
+texture = ExtResource("19_kqdpi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yuhry"]
+texture = ExtResource("19_uvdq0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g2oxc"]
+texture = ExtResource("20_2l46h")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_322se")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_cq0fj")
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="BoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Label" type="Label" parent="BoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ywaak")
+theme_override_font_sizes/font_size = 50
+text = "✨Anime Hair Style Try-On✨"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 30
+
+[node name="SplitContainer" type="SplitContainer" parent="BoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="BoxContainer/MarginContainer/SplitContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.2
+ratio = 1.3
+stretch_mode = 1
+
+[node name="WebCam" type="VBoxContainer" parent="BoxContainer/MarginContainer/SplitContainer/AspectRatioContainer"]
+layout_mode = 2
+script = ExtResource("3_0jwhu")
+
+[node name="WebCamPanel" type="Panel" parent="BoxContainer/MarginContainer/SplitContainer/AspectRatioContainer/WebCam"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 7.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xf56w")
+
+[node name="WebCamFeed" type="TextureRect" parent="BoxContainer/MarginContainer/SplitContainer/AspectRatioContainer/WebCam/WebCamPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FpsInfo" type="Label" parent="BoxContainer/MarginContainer/SplitContainer/AspectRatioContainer/WebCam/WebCamPanel/WebCamFeed"]
+layout_mode = 1
+offset_left = 35.85
+offset_top = 18.0
+offset_right = 80.85
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("2_ywaak")
+text = "FPS : "
+
+[node name="CameraStatusLabel" type="Label" parent="BoxContainer/MarginContainer/SplitContainer/AspectRatioContainer/WebCam/WebCamPanel/WebCamFeed"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -11.5
+offset_right = 122.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Inisialisasi Koneksi WebCam ....."
+
+[node name="HairOverlay" type="Control" parent="BoxContainer/MarginContainer/SplitContainer/AspectRatioContainer/WebCam/WebCamPanel/WebCamFeed"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HairDisplay" type="TextureRect" parent="BoxContainer/MarginContainer/SplitContainer/AspectRatioContainer/WebCam/WebCamPanel/WebCamFeed/HairOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -136.0
+offset_right = 176.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HairInfo" type="Label" parent="BoxContainer/MarginContainer/SplitContainer/AspectRatioContainer/WebCam/WebCamPanel/WebCamFeed"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 6.84998
+offset_top = 28.0
+offset_right = 74.85
+offset_bottom = 51.0
+grow_vertical = 0
+text = "Hair Info :"
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer/MarginContainer/SplitContainer/AspectRatioContainer/WebCam"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 200
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer/MarginContainer/SplitContainer/AspectRatioContainer/WebCam/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+
+[node name="Button" type="Button" parent="BoxContainer/MarginContainer/SplitContainer/AspectRatioContainer/WebCam/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_brmue")
+text = "Connect"
+
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/SplitContainer/AspectRatioContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BoxContainer/MarginContainer/SplitContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.35
+theme_override_styles/panel = SubResource("StyleBoxFlat_6ww13")
+
+[node name="ListHairContainer" type="AspectRatioContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="list_hair" type="VBoxContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+script = ExtResource("3_4vc3x")
+
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_ywaak")
+theme_override_font_sizes/font_size = 18
+text = "Choose Style"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hair1" type="Button" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair"]
+custom_minimum_size = Vector2(20, 200)
+layout_direction = 1
+layout_mode = 2
+theme = ExtResource("6_hetvp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair1/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.5
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair1/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_1yhme")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Panel" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair1/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("5_u62el")
+
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair1/VBoxContainer/Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hair Type 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hair2" type="Button" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair"]
+custom_minimum_size = Vector2(20, 200)
+layout_direction = 1
+layout_mode = 2
+theme = ExtResource("6_hetvp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.5
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair2/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_t2svq")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Panel" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("5_u62el")
+
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair2/VBoxContainer/Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kxnmo")
+text = "Hair Type 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hair3" type="Button" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair"]
+custom_minimum_size = Vector2(20, 200)
+layout_direction = 1
+layout_mode = 2
+theme = ExtResource("6_hetvp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.5
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair3/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_345wf")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Panel" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_fgyx1")
+
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair3/VBoxContainer/Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hair Type 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hair4" type="Button" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair"]
+custom_minimum_size = Vector2(20, 200)
+layout_direction = 1
+layout_mode = 2
+theme = ExtResource("6_hetvp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair4/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.5
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair4/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_opodf")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Panel" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair4/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_mc5g1")
+
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair4/VBoxContainer/Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hair Type 4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hair5" type="Button" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair"]
+custom_minimum_size = Vector2(20, 200)
+layout_direction = 1
+layout_mode = 2
+theme = ExtResource("6_hetvp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair5/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.5
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair5/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_q2rga")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Panel" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair5/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_yn2q5")
+
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair5/VBoxContainer/Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hair Type 5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hair6" type="Button" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair"]
+custom_minimum_size = Vector2(20, 200)
+layout_direction = 1
+layout_mode = 2
+theme = ExtResource("6_hetvp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair6/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.5
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair6/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("6_jwpkr")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Panel" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair6/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_1fe0d")
+
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair6/VBoxContainer/Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hair Type 6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hair7" type="Button" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair"]
+custom_minimum_size = Vector2(20, 200)
+layout_direction = 1
+layout_mode = 2
+theme = ExtResource("6_hetvp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair7/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.5
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair7/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_hhqll")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Panel" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair7/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("5_u62el")
+
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair7/VBoxContainer/Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hair Type 7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hair8" type="Button" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair"]
+custom_minimum_size = Vector2(20, 200)
+layout_direction = 1
+layout_mode = 2
+theme = ExtResource("6_hetvp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair8/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.5
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair8/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("8_p73yl")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Panel" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair8/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_p280j")
+
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair8/VBoxContainer/Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hair Type 8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hair9" type="Button" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair"]
+custom_minimum_size = Vector2(20, 200)
+layout_direction = 1
+layout_mode = 2
+theme = ExtResource("6_hetvp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair9/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.5
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair9/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("9_6mts4")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Panel" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair9/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2tjm")
+
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair9/VBoxContainer/Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hair Type 9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hair10" type="Button" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair"]
+custom_minimum_size = Vector2(20, 200)
+layout_direction = 1
+layout_mode = 2
+theme = ExtResource("6_hetvp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair10"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair10/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.5
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair10/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("10_erjks")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Panel" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair10/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_dsuo8")
+
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair10/VBoxContainer/Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hair Type 10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hair11" type="Button" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair"]
+custom_minimum_size = Vector2(20, 200)
+layout_direction = 1
+layout_mode = 2
+theme = ExtResource("6_hetvp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair11"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair11/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.5
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair11/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("11_6fcjo")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Panel" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair11/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("5_u62el")
+
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair11/VBoxContainer/Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hair Type 11"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hair12" type="Button" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair"]
+custom_minimum_size = Vector2(20, 200)
+layout_direction = 1
+layout_mode = 2
+theme = ExtResource("6_hetvp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair12"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair12/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.5
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair12/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("12_65jix")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Panel" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair12/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_7jqn6")
+
+[node name="Label" type="Label" parent="BoxContainer/MarginContainer/SplitContainer/ScrollContainer/ListHairContainer/MarginContainer/list_hair/hair12/VBoxContainer/Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hair Type 12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 61.0
+offset_bottom = 55.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h2cnp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xx5gu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yuhry")
+theme_override_styles/normal = SubResource("StyleBoxTexture_g2oxc")
