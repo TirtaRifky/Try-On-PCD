@@ -63,6 +63,14 @@ func _on_connect_pressed():
 	else:
 		await _connect_udp() # Proses koneksi async
 
+func _process(_delta):
+	if connected_state and udp_client.get_available_packet_count() > 0:
+		var packet = udp_client.get_packet()
+		# Only process large packets (likely image data)
+		if packet.size() > 100:
+			var webcam_node = $BoxContainer/MarginContainer/SplitContainer/AspectRatioContainer/WebCam
+			webcam_node.process_camera_packet(packet)
+
 
 # ========================================================
 # Fungsi Dummy Koneksi UDP → kirim "ping"

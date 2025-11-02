@@ -110,14 +110,8 @@ class HairOverlayApp:
                 
                 # Verify with our trained model
                 if self.verify_face(face_img):
-                    # Draw rectangle around face
-                    cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
-                    
                     # Overlay hair
                     frame = self.overlay_hair(frame, x, y, w, h)
-                else:
-                    # Draw red rectangle for rejected faces
-                    cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0, 255), 2)
             
             # Display controls
             cv2.putText(frame, "Press 'n' for next hair style", (10, 30),

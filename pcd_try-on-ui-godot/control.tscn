@@ -1,11 +1,11 @@
 [gd_scene load_steps=41 format=3 uid="uid://dpk26pkj3k270"]
 
 [ext_resource type="Texture2D" uid="uid://p2xfqxor8vnx" path="res://hair-asset/hair1.png" id="1_1yhme"]
-[ext_resource type="Script" path="res://Scripts/control.gd" id="1_322se"]
+[ext_resource type="Script" uid="uid://d2rbk0cdjk0km" path="res://Scripts/control.gd" id="1_322se"]
 [ext_resource type="Texture2D" uid="uid://bemii6rcjejku" path="res://hair-asset/hair2.png" id="2_t2svq"]
 [ext_resource type="FontFile" uid="uid://dedyd4n1a8j5p" path="res://HabaneraRounded-Medium.ttf" id="2_ywaak"]
-[ext_resource type="Script" path="res://Scripts/web_cam_controller.gd" id="3_0jwhu"]
-[ext_resource type="Script" path="res://Scripts/selection_list_hair.gd" id="3_4vc3x"]
+[ext_resource type="Script" uid="uid://b2qdsprhhrobw" path="res://Scripts/web_cam_controller.gd" id="3_0jwhu"]
+[ext_resource type="Script" uid="uid://b1e8qjgaxt70v" path="res://Scripts/selection_list_hair.gd" id="3_4vc3x"]
 [ext_resource type="Texture2D" uid="uid://coc77vxqyqrv1" path="res://hair-asset/hair3.png" id="3_345wf"]
 [ext_resource type="Texture2D" uid="uid://c8n2on5s6fl51" path="res://hair-asset/hair4.png" id="4_opodf"]
 [ext_resource type="Texture2D" uid="uid://be21xjfwstouh" path="res://hair-asset/hair5.png" id="5_q2rga"]
@@ -188,10 +188,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -122.0
-offset_top = -11.5
-offset_right = 122.0
-offset_bottom = 11.5
+offset_left = -301.0
+offset_top = -188.0
+offset_right = -57.0
+offset_bottom = -164.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Inisialisasi Koneksi WebCam ....."
@@ -213,10 +213,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -176.0
-offset_top = -136.0
-offset_right = 176.0
-offset_bottom = 136.0
+offset_left = -202.15
+offset_top = -137.0
+offset_right = 149.85
+offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
 

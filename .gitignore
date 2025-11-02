@@ -41,3 +41,6 @@ ENV/
 # Misc
 .DS_Store
 Thumbs.db
+
+#godot uid
+*.gd.uid
