@@ -60,7 +60,20 @@ def evaluate(args):
         with open(args.report, 'w') as f:
             json.dump(metrics, f, indent=2)
     
-    print(f"Test Average Precision: {metrics['average_precision']:.3f}")
+    # Print summary
+    print("\n=== Evaluation Results ===")
+    print(f"Accuracy:           {metrics['accuracy']:.3f}")
+    print(f"Precision:          {metrics['precision']:.3f}")
+    print(f"Recall:             {metrics['recall']:.3f}")
+    print(f"F1-Score:           {metrics['f1_score']:.3f}")
+    print(f"Specificity:        {metrics['specificity']:.3f}")
+    print(f"Average Precision:  {metrics['average_precision']:.3f}")
+    print(f"ROC-AUC:            {metrics['roc_auc']:.3f}")
+    print("\n=== Confusion Matrix ===")
+    print(f"True Positives:     {metrics['confusion_matrix']['true_positive']}")
+    print(f"False Positives:    {metrics['confusion_matrix']['false_positive']}")
+    print(f"True Negatives:     {metrics['confusion_matrix']['true_negative']}")
+    print(f"False Negatives:    {metrics['confusion_matrix']['false_negative']}")
 
 def stream(args):
     """Run face detection on webcam and stream results over UDP."""

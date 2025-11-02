@@ -3,7 +3,11 @@ import joblib
 from typing import Dict, Tuple
 import numpy as np
 from sklearn.svm import LinearSVC
-from sklearn.metrics import precision_recall_curve, average_precision_score
+from sklearn.metrics import (
+    precision_recall_curve, average_precision_score,
+    accuracy_score, precision_score, recall_score, f1_score,
+    confusion_matrix, roc_auc_score, classification_report
+)
 from .features import ORBFeatureExtractor
 
 class FaceDetectorTrainer:
@@ -26,15 +30,32 @@ class FaceDetectorTrainer:
         print("Training SVM...")
         self.svm.fit(X_train_bovw, y_train)
         
-        # Compute validation metrics
+        # Get predictions
+        y_val_pred = self.svm.predict(X_val_bovw)
         val_scores = self.svm.decision_function(X_val_bovw)
+        
+        # Compute confusion matrix
+        tn, fp, fn, tp = confusion_matrix(y_val, y_val_pred).ravel()
+        
+        # Compute validation metrics
         precision, recall, _ = precision_recall_curve(y_val, val_scores)
-        ap = average_precision_score(y_val, val_scores)
         
         metrics = {
-            'average_precision': ap,
-            'precision': precision.tolist(),
-            'recall': recall.tolist()
+            'average_precision': float(average_precision_score(y_val, val_scores)),
+            'accuracy': float(accuracy_score(y_val, y_val_pred)),
+            'precision': float(precision_score(y_val, y_val_pred)),
+            'recall': float(recall_score(y_val, y_val_pred)),
+            'f1_score': float(f1_score(y_val, y_val_pred)),
+            'specificity': float(tn / (tn + fp)) if (tn + fp) > 0 else 0.0,
+            'roc_auc': float(roc_auc_score(y_val, val_scores)),
+            'confusion_matrix': {
+                'true_positive': int(tp),
+                'false_positive': int(fp),
+                'true_negative': int(tn),
+                'false_negative': int(fn)
+            },
+            'precision_curve': precision.tolist(),
+            'recall_curve': recall.tolist()
         }
         
         return metrics
@@ -44,15 +65,32 @@ class FaceDetectorTrainer:
         # Extract features
         X_test_bovw = self.feature_extractor.extract_bovw_features(X_test)
         
-        # Compute test metrics
+        # Get predictions
+        y_test_pred = self.svm.predict(X_test_bovw)
         test_scores = self.svm.decision_function(X_test_bovw)
+        
+        # Compute confusion matrix
+        tn, fp, fn, tp = confusion_matrix(y_test, y_test_pred).ravel()
+        
+        # Compute test metrics
         precision, recall, _ = precision_recall_curve(y_test, test_scores)
-        ap = average_precision_score(y_test, test_scores)
         
         metrics = {
-            'average_precision': ap,
-            'precision': precision.tolist(),
-            'recall': recall.tolist()
+            'average_precision': float(average_precision_score(y_test, test_scores)),
+            'accuracy': float(accuracy_score(y_test, y_test_pred)),
+            'precision': float(precision_score(y_test, y_test_pred)),
+            'recall': float(recall_score(y_test, y_test_pred)),
+            'f1_score': float(f1_score(y_test, y_test_pred)),
+            'specificity': float(tn / (tn + fp)) if (tn + fp) > 0 else 0.0,
+            'roc_auc': float(roc_auc_score(y_test, test_scores)),
+            'confusion_matrix': {
+                'true_positive': int(tp),
+                'false_positive': int(fp),
+                'true_negative': int(tn),
+                'false_negative': int(fn)
+            },
+            'precision_curve': precision.tolist(),
+            'recall_curve': recall.tolist()
         }
         
         return metrics
