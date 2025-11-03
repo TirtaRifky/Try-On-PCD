@@ -1,0 +1,239 @@
+[gd_scene load_steps=18 format=3 uid="uid://cqmmtfkki1hjk"]
+
+[ext_resource type="Script" uid="uid://dn5r5v058xxmd" path="res://test.gd" id="1_8kbuk"]
+[ext_resource type="FontFile" uid="uid://dedyd4n1a8j5p" path="res://HabaneraRounded-Medium.ttf" id="1_j5dxp"]
+[ext_resource type="Texture2D" uid="uid://d32fwb3d4c1ts" path="res://foto/jelang.png" id="2_ecaes"]
+[ext_resource type="Texture2D" uid="uid://cwfr2pyfqprr1" path="res://foto/mgianluigi.png" id="3_a2oxf"]
+[ext_resource type="Texture2D" uid="uid://bf31xlvnho502" path="res://themes/close_hover.png" id="3_adaw3"]
+[ext_resource type="Texture2D" uid="uid://32hioua1lbny" path="res://themes/close_pressed.png" id="4_78qhl"]
+[ext_resource type="Texture2D" uid="uid://erdl6yvjgb8w" path="res://foto/tirta.png" id="4_ruefy"]
+[ext_resource type="Texture2D" uid="uid://dx160ipeud2v2" path="res://themes/close.png" id="5_ep2kk"]
+[ext_resource type="Texture2D" uid="uid://dfjd3v1gvt1f0" path="res://themes/1448061734635.png" id="8_h3jhn"]
+[ext_resource type="Texture2D" uid="uid://cxi1ex3ad1dlh" path="res://themes/141000167429.png" id="9_tqkhw"]
+[ext_resource type="Texture2D" uid="uid://cil7wnvyrrna0" path="res://themes/Save___follow__NgônNgôn-removebg-preview.png" id="11_77dp3"]
+
+[sub_resource type="Gradient" id="Gradient_alkcd"]
+interpolation_mode = 2
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.560345, 0.806035, 0.883621, 0.987069)
+colors = PackedColorArray(0.516261, 0.601116, 0.946247, 1, 0.336867, 0.246786, 0.72478, 1, 0.665921, 0.426746, 0.864843, 1, 0.769152, 0.481687, 0.908016, 1, 0.932025, 0.569613, 0.975492, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_34qi4"]
+gradient = SubResource("Gradient_alkcd")
+fill = 1
+metadata/_snap_enabled = true
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pdeqf"]
+texture = SubResource("GradientTexture2D_34qi4")
+modulate_color = Color(0.856067, 0.856067, 0.856067, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vgi8q"]
+texture = ExtResource("3_adaw3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c0jsi"]
+texture = ExtResource("4_78qhl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_og5ld"]
+texture = ExtResource("5_ep2kk")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_8kbuk")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_pdeqf")
+
+[node name="BoxContainer" type="BoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/BoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/BoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Panel/BoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_j5dxp")
+theme_override_font_sizes/font_size = 50
+text = "About Us"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Panel/BoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_j5dxp")
+theme_override_font_sizes/font_size = 40
+text = " Kelompok 8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/BoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.62
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/BoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/BoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Panel/BoxContainer/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/BoxContainer/MarginContainer/HBoxContainer/MarginContainer/VSplitContainer"]
+layout_mode = 2
+texture = ExtResource("2_ecaes")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Panel/BoxContainer/MarginContainer/HBoxContainer/MarginContainer/VSplitContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_j5dxp")
+theme_override_font_sizes/font_size = 22
+text = "Jelang Anugrah Raharjo
+ 231524046"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/BoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VSplitContainer2" type="VSplitContainer" parent="Panel/BoxContainer/MarginContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/BoxContainer/MarginContainer/HBoxContainer/MarginContainer2/VSplitContainer2"]
+layout_mode = 2
+texture = ExtResource("3_a2oxf")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Panel/BoxContainer/MarginContainer/HBoxContainer/MarginContainer2/VSplitContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_j5dxp")
+theme_override_font_sizes/font_size = 21
+text = "Muhammad Gianluigi Julian
+231524054"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="Panel/BoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VSplitContainer3" type="VSplitContainer" parent="Panel/BoxContainer/MarginContainer/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/BoxContainer/MarginContainer/HBoxContainer/MarginContainer3/VSplitContainer3"]
+layout_mode = 2
+texture = ExtResource("4_ruefy")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Panel/BoxContainer/MarginContainer/HBoxContainer/MarginContainer3/VSplitContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_j5dxp")
+theme_override_font_sizes/font_size = 21
+text = "Tirta Rifky Fauzan
+231524063"
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -78.0
+offset_top = 22.0
+offset_right = -20.0
+offset_bottom = 77.0
+grow_horizontal = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_vgi8q")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_c0jsi")
+theme_override_styles/normal = SubResource("StyleBoxTexture_og5ld")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -196.0
+offset_right = 8.0
+offset_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 0.0649458
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer"]
+layout_mode = 2
+texture = ExtResource("8_h3jhn")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SaveFollowNgônNgôn-removebg-preview" type="Sprite2D" parent="AspectRatioContainer2"]
+position = Vector2(88, 102)
+rotation = 1.31124
+scale = Vector2(0.360602, 0.449248)
+texture = ExtResource("11_77dp3")
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -210.0
+offset_right = 210.0
+grow_vertical = 0
+
+[node name="TextureRect2" type="TextureRect" parent="AspectRatioContainer3"]
+layout_mode = 2
+texture = ExtResource("9_tqkhw")
+expand_mode = 1
+stretch_mode = 1
+
+[connection signal="pressed" from="Button2" to="." method="_on_exit_button_pressed"]
