@@ -1,165 +1,174 @@
-# Virtual Hair Try-On with SVM+ORB Face Detection
+# Virtual Hair Try-On System with Classical Computer Vision
 
-A real-time virtual hair try-on system using classical computer vision techniques. The system combines Haar Cascade for initial face detection with ORB features and SVM classification for robust face verification, enabling accurate hair overlay placement without deep learning dependencies.
+A real-time virtual hair try-on system using classical computer vision techniques and Godot UI. The system combines traditional computer vision (Haar Cascade + SVM + ORB) with a modern Godot interface for an interactive hair try-on experience.
 
 ## 🌟 Features
 
-- **Lightweight Face Detection**
-  - Haar Cascade for initial face detection
-  - ORB (Oriented FAST and Rotated BRIEF) features with Bag of Visual Words
-  - SVM classification for face verification
-  - No deep learning dependencies (no dlib, no cmake required)
+### Computer Vision Engine
+- **Two-Stage Face Detection**
+  - Haar Cascade for fast initial detection
+  - SVM + ORB for accurate face verification
+  - No deep learning dependencies
+  - CPU-optimized processing (≥15 FPS at 720p)
 
-- **Real-time Performance**
-  - ≥15 FPS on 720p video
-  - Efficient feature extraction and classification
-  - Optimized for CPU processing
+### Interactive UI (Godot)
+- **User-Friendly Interface**
+  - Real-time webcam feed
+  - Easy hair style selection
+  - Interactive controls
+  - Style preview system
 
-- **Virtual Hair Try-On**
-  - Support for multiple hair styles
-  - Real-time hair overlay with transparency
-  - Interactive style switching
+### Hair Try-On
+- **Real-time Overlay**
+  - Multiple hair styles support
+  - Alpha blending for natural look
   - Automatic positioning and scaling
+  - Smooth tracking and updates
 
-## Installation
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.8+
+- Godot 4.x
+- Webcam
+
+### Installation
 
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd svm_orb_face_streamer
+cd Try-On-PCD
 ```
 
-2. Install dependencies:
+2. Install Python dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-## Dataset Preparation
-
-The system requires a user-provided dataset organized as follows:
-
+3. Open the Godot project:
 ```
-data/
-  faces/         # Positive samples (face images)
-  non_faces/     # Negative samples (non-face images)
+pcd_try-on-ui-godot/project.godot
 ```
 
-Guidelines for dataset preparation:
-- Face images should be roughly cropped around the face
-- Non-face images can be any images without faces
-- Recommended minimum: 1000 faces, 2000 non-faces
-- Supported formats: jpg, jpeg, png
-- Images will be automatically resized during training
+## 💻 Usage
 
-## Usage
-
-### Training
-
-Train the face detector with your dataset:
+### 1. Train Face Detection Model (Optional)
+Skip this if using pre-trained models.
 
 ```bash
+# Training
 python app.py train \
     --pos_dir data/faces \
     --neg_dir data/non_faces \
     --models_dir models \
-    --n_keypoints 500
-```
+    --n_keypoints 2000 \
+    --n_faces 2500 \
+    --n_non_faces 2500
 
-### Evaluation
-
-Evaluate the trained model on the test split:
-
-```bash
+# Evaluation
 python app.py eval \
     --pos_dir data/faces \
     --neg_dir data/non_faces \
     --models_dir models \
-    --report reports/test_metrics.json
+    --report reports/eval_metrics.json
 ```
 
-### Live Streaming
-
-Run face detection on webcam and stream coordinates via UDP:
-
+### 2. Start the Hair Try-On Server
 ```bash
-python app.py stream \
-    --camera 0 \
-    --ip 127.0.0.1 \
-    --port 4242 \
-    --models_dir models
+python udp_hair_server.py \
+    --models_dir models \
+    --hair_dir assets/hair-asset
 ```
 
-## Integration with Godot
+### 3. Launch Godot Interface
+- Open project in Godot Editor
+- Run the scene (F5)
+- Or export and run the standalone application
 
-Add this GDScript to receive face coordinates in your Godot project:
+## 🎮 Godot Interface Guide
 
-```gdscript
-extends Node
+### Main Features
+- Webcam view with real-time hair overlay
+- Hair style selection panel
+- Information popup
+- Settings control
 
-var udp_server = PacketPeerUDP.new()
-var port = 4242
+### Controls
+- Click hair styles to try different options
+- Use info button for help
+- Close button to exit application
 
-func _ready():
-    # Start UDP server
-    if udp_server.listen(port) != OK:
-        print("Failed to start UDP server")
-        return
-    print("Listening on port ", port)
+## 🔧 System Architecture
 
-func _process(_delta):
-    # Check for new UDP packets
-    if udp_server.get_available_packet_count() > 0:
-        # Get packet as string
-        var data = udp_server.get_packet().get_string_from_ascii()
-        
-        # Parse coordinates
-        var coords = data.split(",")
-        if coords.size() == 4:
-            var x = int(coords[0])
-            var y = int(coords[1])
-            var w = int(coords[2])
-            var h = int(coords[3])
-            
-            # Use coordinates to update game object
-            if w > 0 and h > 0:  # Face detected
-                print("Face detected at: ", x, ", ", y)
-                # Update game object position/state
-            else:  # No face detected
-                print("No face detected")
+### Python Backend
+1. **Face Detection Pipeline**
+   ```
+   Camera Input → Haar Cascade → ORB Features → SVM Verification → Hair Overlay
+   ```
+
+2. **UDP Communication**
+   - Server: Python backend (udp_hair_server.py)
+   - Client: Godot interface (udp_client.gd)
+   - Default port: 4242
+
+### Godot Frontend
+1. **Main Scene Components**
+   - WebCamController: Handles video feed
+   - SelectionListHair: Manages hair options
+   - UDPClient: Handles communication
+
+2. **Scripts**
+   - `web_cam_controller.gd`: Webcam management
+   - `selection_list_hair.gd`: Hair selection UI
+   - `udp_client.gd`: Backend communication
+
+## 📁 Project Structure
+```
+Try-On-PCD/
+├── assets/                 # Resources
+│   ├── cascades/          # Haar cascade files
+│   └── hair-asset/        # Hair overlay images
+├── data/                  # Training data
+├── models/               # Trained models
+├── pipelines/            # CV pipeline
+├── pcd_try-on-ui-godot/  # Godot interface
+│   ├── Scripts/          # GDScript files
+│   ├── themes/           # UI assets
+│   └── hair-asset/       # Hair images
+├── app.py               # Training script
+├── demo.py              # Basic demo
+└── udp_hair_server.py   # Main server
 ```
 
-## Technical Details
+## ⚙️ Configuration
 
-### Pipeline Components
+### Python Backend
+- Models directory: `models/`
+- Hair assets: `assets/hair-asset/`
+- Default port: 4242
+- Cascade file: `assets/cascades/haarcascade_frontalface_default.xml`
 
-1. **ROI Proposal**
-   - Uses Haar Cascade for fast initial face detection
-   - Provides candidate regions for detailed analysis
+### Godot Frontend
+- Default UDP port: 4242
+- Hair assets path: `hair-asset/`
+- Video resolution: 720p
 
-2. **Feature Extraction**
-   - ORB (Oriented FAST and Rotated BRIEF) features
-   - Fast, scale and rotation invariant
-   - Bag of Visual Words (BoVW) representation
+## 📝 Notes
 
-3. **Classification**
-   - Linear SVM for efficient inference
-   - Trained on BoVW features
-   - Non-Maximum Suppression for multiple detections
+### Performance Tips
+- Ensure good lighting for face detection
+- Keep face centered and frontal
+- Maintain stable internet connection
+- Close other webcam applications
 
-### Performance
+### Known Limitations
+- Works best with frontal faces
+- Single face detection only
+- Requires consistent lighting
+- CPU-dependent performance
 
-- Processing Speed: ≥15 FPS on 720p webcam feed
-- Accuracy: Depends heavily on training data quality
-- Typical AP scores: 0.85-0.95 with good dataset
 
-## Limitations
-
-- Performance depends heavily on training dataset quality
-- Less robust than deep learning approaches
-- Limited to frontal faces (due to Haar cascade)
-- May struggle with extreme poses or lighting
-- Single face tracking (streams only largest detected face)
-
-## License
-
-MIT License - feel free to use and modify for your projects.
+## 🙏 Acknowledgments
+- OpenCV for computer vision tools
+- Godot Engine for UI framework
+- scikit-learn for machine learning components
