@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u2jhe3aojssx"
-path="res://.godot/imported/hair11.png-7d883e3940a94aedf9fe1e529fafc8ab.ctex"
+uid="uid://cwfr2pyfqprr1"
+path="res://.godot/imported/mgianluigi.png-694be43a2126115975f242aa73aad18d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hair-asset/hair11.png"
-dest_files=["res://.godot/imported/hair11.png-7d883e3940a94aedf9fe1e529fafc8ab.ctex"]
+source_file="res://foto/mgianluigi.png"
+dest_files=["res://.godot/imported/mgianluigi.png-694be43a2126115975f242aa73aad18d.ctex"]
 
 [params]
 

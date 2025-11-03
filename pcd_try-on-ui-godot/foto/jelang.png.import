@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u2jhe3aojssx"
-path="res://.godot/imported/hair11.png-7d883e3940a94aedf9fe1e529fafc8ab.ctex"
+uid="uid://d32fwb3d4c1ts"
+path="res://.godot/imported/jelang.png-37e1e8a0cbfb9b6d3e8d902939334029.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hair-asset/hair11.png"
-dest_files=["res://.godot/imported/hair11.png-7d883e3940a94aedf9fe1e529fafc8ab.ctex"]
+source_file="res://foto/jelang.png"
+dest_files=["res://.godot/imported/jelang.png-37e1e8a0cbfb9b6d3e8d902939334029.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u2jhe3aojssx"
-path="res://.godot/imported/hair11.png-7d883e3940a94aedf9fe1e529fafc8ab.ctex"
+uid="uid://dgf1k683p3kna"
+path="res://.godot/imported/tritarizki.png-1f38f90a7535fd703a35214b896afdce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hair-asset/hair11.png"
-dest_files=["res://.godot/imported/hair11.png-7d883e3940a94aedf9fe1e529fafc8ab.ctex"]
+source_file="res://foto/tritarizki.png"
+dest_files=["res://.godot/imported/tritarizki.png-1f38f90a7535fd703a35214b896afdce.ctex"]
 
 [params]
 

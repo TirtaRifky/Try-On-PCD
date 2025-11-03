@@ -1,26 +1,28 @@
-[gd_scene load_steps=41 format=3 uid="uid://dpk26pkj3k270"]
+[gd_scene load_steps=43 format=3 uid="uid://dpk26pkj3k270"]
 
 [ext_resource type="Texture2D" uid="uid://p2xfqxor8vnx" path="res://hair-asset/hair1.png" id="1_1yhme"]
-[ext_resource type="Script" uid="uid://d2rbk0cdjk0km" path="res://Scripts/control.gd" id="1_322se"]
+[ext_resource type="Script" path="res://Scripts/control.gd" id="1_322se"]
 [ext_resource type="Texture2D" uid="uid://bemii6rcjejku" path="res://hair-asset/hair2.png" id="2_t2svq"]
 [ext_resource type="FontFile" uid="uid://dedyd4n1a8j5p" path="res://HabaneraRounded-Medium.ttf" id="2_ywaak"]
-[ext_resource type="Script" uid="uid://b2qdsprhhrobw" path="res://Scripts/web_cam_controller.gd" id="3_0jwhu"]
-[ext_resource type="Script" uid="uid://b1e8qjgaxt70v" path="res://Scripts/selection_list_hair.gd" id="3_4vc3x"]
+[ext_resource type="Script" path="res://Scripts/web_cam_controller.gd" id="3_0jwhu"]
+[ext_resource type="Script" path="res://Scripts/selection_list_hair.gd" id="3_4vc3x"]
 [ext_resource type="Texture2D" uid="uid://coc77vxqyqrv1" path="res://hair-asset/hair3.png" id="3_345wf"]
 [ext_resource type="Texture2D" uid="uid://c8n2on5s6fl51" path="res://hair-asset/hair4.png" id="4_opodf"]
 [ext_resource type="Texture2D" uid="uid://be21xjfwstouh" path="res://hair-asset/hair5.png" id="5_q2rga"]
 [ext_resource type="StyleBox" uid="uid://drxwc3eeb38b" path="res://themes/boxTeksHair.tres" id="5_u62el"]
 [ext_resource type="Theme" uid="uid://b55ksjh6c6jav" path="res://themes/HairButton.tres" id="6_hetvp"]
 [ext_resource type="Texture2D" uid="uid://cemclxyupc77i" path="res://hair-asset/hair6.png" id="6_jwpkr"]
+[ext_resource type="Script" path="res://info_button.gd" id="6_y0dvu"]
 [ext_resource type="Texture2D" uid="uid://wdq2c4tyyxr8" path="res://hair-asset/hair7.png" id="7_hhqll"]
 [ext_resource type="Texture2D" uid="uid://bhq0bbc8o2knj" path="res://hair-asset/hair8.png" id="8_p73yl"]
 [ext_resource type="Texture2D" uid="uid://yvjvb1hosx1f" path="res://hair-asset/hair9.png" id="9_6mts4"]
 [ext_resource type="Texture2D" uid="uid://yxorfb77rhct" path="res://hair-asset/hair10.png" id="10_erjks"]
-[ext_resource type="Texture2D" uid="uid://bguhm5laop2ad" path="res://hair-asset/hair11.png" id="11_6fcjo"]
+[ext_resource type="Texture2D" uid="uid://u2jhe3aojssx" path="res://hair-asset/hair11.png" id="11_6fcjo"]
 [ext_resource type="Texture2D" uid="uid://csumxh7dbv3lk" path="res://hair-asset/hair12.png" id="12_65jix"]
 [ext_resource type="Texture2D" uid="uid://c7ou0l5gecaha" path="res://themes/—Pngtree—vector information icon_4272331.png" id="19_kqdpi"]
 [ext_resource type="Texture2D" uid="uid://u8n24o3mlwop" path="res://themes/—Pngtree—info vector icon_3791375.png" id="19_uvdq0"]
 [ext_resource type="Texture2D" uid="uid://c83u37q5smt6l" path="res://themes/—Pngtree—vector information icon_4183763.png" id="20_2l46h"]
+[ext_resource type="PackedScene" uid="uid://cqmmtfkki1hjk" path="res://test.tscn" id="23_tm2r1"]
 
 [sub_resource type="Gradient" id="Gradient_0n5s7"]
 interpolation_mode = 2
@@ -28,13 +30,13 @@ interpolation_color_space = 2
 offsets = PackedFloat32Array(0, 0.560345, 0.806035, 0.883621, 0.987069)
 colors = PackedColorArray(0.516261, 0.601116, 0.946247, 1, 0.336867, 0.246786, 0.72478, 1, 0.665921, 0.426746, 0.864843, 1, 0.769152, 0.481687, 0.908016, 1, 0.932025, 0.569613, 0.975492, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_5ub28"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rlmkq"]
 gradient = SubResource("Gradient_0n5s7")
 fill = 1
 metadata/_snap_enabled = true
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cq0fj"]
-texture = SubResource("GradientTexture2D_5ub28")
+texture = SubResource("GradientTexture2D_rlmkq")
 modulate_color = Color(0.856067, 0.856067, 0.856067, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xf56w"]
@@ -864,3 +866,10 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_h2cnp")
 theme_override_styles/hover = SubResource("StyleBoxTexture_xx5gu")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_yuhry")
 theme_override_styles/normal = SubResource("StyleBoxTexture_g2oxc")
+script = ExtResource("6_y0dvu")
+
+[node name="PopUp" parent="." instance=ExtResource("23_tm2r1")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="Button" to="PopUp" method="_on_info_button_pressed"]
